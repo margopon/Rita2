@@ -12,11 +12,11 @@
         android:id="@+id/math_operation"
         android:layout_width="match_parent"
         android:layout_height="80sp"
-        android:textColor="@android:color/white"
-        android:gravity="end"
         android:ellipsize="start"
-        android:textSize="40sp"
-        />
+        android:gravity="end"
+        android:textColor="@android:color/white"
+        android:textSize="40sp" />
+
     <TextView
         android:id="@+id/result_text"
         android:layout_width="match_parent"
@@ -36,25 +36,29 @@
             android:layout_weight="1"
             android:orientation="horizontal"
             android:layout_height="0dp">
-            <TextView
+            <ImageView
+                android:id="@+id/btn_ac"
                 style="@style/ActionButton"
-                android:id="@+id/btn_AC"
-                android:text="AC"
-            />
+                android:src="@mipmap/acd"
+
+                />
 
             <TextView
-                android:id="@+id/btn_Open"
+                android:id="@+id/btn_open"
                 style="@style/ActionButton"
-                android:text="(" />
+                android:text="("
+                android:textSize="40sp"/>
 
             <TextView
                 android:id="@+id/btn_close"
                 style="@style/ActionButton"
-                android:text=")" />
+                android:text=")"
+                android:textSize="40sp"/>
             <TextView
                 style="@style/ActionButton"
-                android:id="@+id/div_btn"
+                android:id="@+id/btn_div"
                 android:text="/"
+                android:textSize="40sp"
                 />
         </LinearLayout>
         <LinearLayout
@@ -77,17 +81,21 @@
                 android:id="@+id/btn_9"
                 android:text="9"
                 />
+
             <TextView
+                android:id="@+id/btn_mult"
                 style="@style/ActionButton"
-                android:id="@+id/mult_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:scrollbarSize="4dp"
                 android:text="*"
-                />
+                android:textSize="40sp" />
         </LinearLayout>
         <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:orientation="horizontal"
-        android:layout_height="0dp">
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_height="0dp">
             <TextView
                 style="@style/NumberButton"
                 android:id="@+id/btn_4"
@@ -105,15 +113,16 @@
                 />
             <TextView
                 style="@style/ActionButton"
-                android:id="@+id/plus_btn"
+                android:id="@+id/btn_plus"
                 android:text="+"
+                android:textSize="40sp"
                 />
-         </LinearLayout>
+        </LinearLayout>
         <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:orientation="horizontal"
-        android:layout_height="0dp">
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_height="0dp">
             <TextView
                 style="@style/NumberButton"
                 android:id="@+id/btn_1"
@@ -131,9 +140,40 @@
                 />
             <TextView
                 style="@style/ActionButton"
-                android:id="@+id/minus_btn"
+                android:id="@+id/btn_minus"
                 android:text="-"
+                android:textSize="40sp"
                 />
-    </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_height="0dp">
+            <TextView
+                style="@style/NumberButton"
+                android:id="@+id/btn_dot"
+                android:text="."
+                android:textSize="40sp"
+                />
+            <TextView
+                style="@style/NumberButton"
+                android:id="@+id/btn_0"
+                android:text="0"
+                />
+
+            <ImageView
+                android:id="@+id/btn_back"
+                style="@style/NumberButton"
+                android:src="@mipmap/back"
+                android:scaleType="center"/>
+
+            <TextView
+                style="@style/ActionButton"
+                android:id="@+id/btn_equal"
+                android:text="="
+                android:textSize="40sp"
+                />
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>
