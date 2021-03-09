@@ -12,22 +12,24 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        btn_0.setOnClickListener { setTextFields("0") }
-        btn_1.setOnClickListener { setTextFields("1") }
-        btn_2.setOnClickListener { setTextFields("2") }
-        btn_3.setOnClickListener { setTextFields("3") }
-        btn_4.setOnClickListener { setTextFields("4") }
-        btn_5.setOnClickListener { setTextFields("5") }
-        btn_6.setOnClickListener { setTextFields("6") }
-        btn_7.setOnClickListener { setTextFields("7") }
-        btn_8.setOnClickListener { setTextFields("8") }
-        btn_9.setOnClickListener { setTextFields("9") }
-        btn_minus.setOnClickListener { setTextFields("-") }
-        btn_plus.setOnClickListener { setTextFields("+") }
-        btn_mult.setOnClickListener { setTextFields("*") }
-        btn_div.setOnClickListener { setTextFields("/") }
-        btn_open.setOnClickListener { setTextFields("(") }
-        btn_close.setOnClickListener { setTextFields(")") }
+        btn_0.setOnClickListener { setTextFields("0",true) }
+        btn_1.setOnClickListener { setTextFields("1",true) }
+        btn_2.setOnClickListener { setTextFields("2",true) }
+        btn_3.setOnClickListener { setTextFields("3",true)}
+        btn_4.setOnClickListener { setTextFields("4",true)}
+        btn_5.setOnClickListener { setTextFields("5",true)}
+        btn_6.setOnClickListener { setTextFields("6",true)}
+        btn_7.setOnClickListener { setTextFields("7",true)}
+        btn_8.setOnClickListener { setTextFields("8",true)}
+        btn_9.setOnClickListener { setTextFields("9",true)}
+        btn_dot.setOnClickListener { setTextFields(".",true) }
+
+        btn_minus.setOnClickListener { setTextFields("-",false)}
+        btn_plus.setOnClickListener { setTextFields("+",false)}
+        btn_mult.setOnClickListener { setTextFields("*",false)}
+        btn_div.setOnClickListener { setTextFields("/",false)}
+        btn_open.setOnClickListener { setTextFields("(",false)}
+        btn_close.setOnClickListener { setTextFields(")",false)}
 
         btn_ac.setOnClickListener {
             math_operation.text = ""
@@ -55,10 +57,22 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-    fun setTextFields(str: String) {
-        if(result_text.text !="") {
-            math_operation.text = result_text.text
+    fun setTextFields(str: String, ochistka: Boolean)
+    {
+        if(result_text.text.isNotEmpty()) {
+            math_operation.text = ""
         }
-        math_operation.append(str)
+
+        if(ochistka)
+        {
+            result_text.text = ""
+            math_operation.append(str)
+    }
+        else
+        {
+            math_operation.append(result_text.text)
+            math_operation.append(str)
+            result_text.text = ""
+        }
     }
 }

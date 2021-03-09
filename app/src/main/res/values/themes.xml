@@ -18,7 +18,7 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_weight">1</item>
         <item name="android:background">@color/p</item>
-        <item name="android:textSize">21sp</item>
+        <item name="android:textSize">31sp</item>
         <item name="android:textColor">@color/p1</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_margin">0.5dp</item>
@@ -29,7 +29,7 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_weight">1</item>
         <item name="android:background">@color/b</item>
-        <item name="android:textSize">21sp</item>
+        <item name="android:textSize">40sp</item>
         <item name="android:textColor">@color/b1</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_margin">0.5dp</item>
